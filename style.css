@@ -12,12 +12,26 @@
 
 body {
   background: var(--fundo);
+  color: var(--texto);
+  transition: background 0.3s, color 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+}
+
+body.dark {
+  --fundo: #121212;
+  --fundo-display: #222;
+  --fundo-calculadora: #1e1e1e;
+  --borda: #444;
+  --texto: #eee;
+  --btn-fundo: #333;
+  --btn-hover: #444;
+  --btn-azul: #3399ff;
+  --btn-azul-hover: #66b3ff;
 }
 
 .calculadora {
@@ -41,6 +55,7 @@ body {
   color: var(--texto);
   box-sizing: border-box;
   margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
 #display.resultado {
@@ -61,12 +76,18 @@ button {
   background: var(--btn-fundo);
   color: var(--texto);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s;
   box-shadow: inset 0 0 0 1px var(--borda);
+  user-select: none;
 }
 
 button:hover {
   background: var(--btn-hover);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 8px var(--btn-azul);
 }
 
 .igual {
@@ -76,5 +97,22 @@ button:hover {
 }
 
 .igual:hover {
+  background: var(--btn-azul-hover);
+}
+
+/* Botão toggle tema */
+#btn-toggle-tema {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: var(--btn-azul);
+  color: white;
+  transition: background 0.3s;
+  user-select: none;
+}
+
+#btn-toggle-tema:hover {
   background: var(--btn-azul-hover);
 }
