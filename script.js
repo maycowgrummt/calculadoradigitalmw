@@ -19,3 +19,18 @@ function calcular() {
     display.value = "Erro";
   }
 }
+
+// Habilita o teclado físico
+document.addEventListener("keydown", function(e) {
+  const tecla = e.key;
+
+  if (!isNaN(tecla) || "+-*/.%".includes(tecla)) {
+    adicionar(tecla);
+  } else if (tecla === "Enter") {
+    calcular();
+  } else if (tecla === "Backspace") {
+    apagar();
+  } else if (tecla === "Escape") {
+    limpar();
+  }
+});
