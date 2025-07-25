@@ -1,5 +1,17 @@
+:root {
+  --fundo: #f4f4f4;
+  --fundo-display: #ffffff;
+  --fundo-calculadora: #ffffff;
+  --borda: #dddddd;
+  --texto: #333;
+  --btn-fundo: #f0f0f0;
+  --btn-hover: #e0e0e0;
+  --btn-azul: #007BFF;
+  --btn-azul-hover: #0056b3;
+}
+
 body {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: var(--fundo);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,36 +21,35 @@ body {
 }
 
 .calculadora {
-  background: #111;
-  padding: 25px;
+  background: var(--fundo-calculadora);
+  padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  width: 320px;
+  max-width: 90%;
 }
 
 #display {
   width: 100%;
-  height: 50px;
+  height: 60px;
   font-size: 28px;
-  margin-bottom: 15px;
   text-align: right;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: #222;
-  color: #0f0;
-  transition: all 0.2s ease-in-out;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid var(--borda);
+  background-color: var(--fundo-display);
+  color: var(--texto);
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 #display.resultado {
-  background-color: #333;
-  color: #0f0;
   font-weight: bold;
-  font-size: 32px;
 }
 
 .botoes {
   display: grid;
-  grid-template-columns: repeat(4, 70px);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
@@ -47,22 +58,23 @@ button {
   font-size: 20px;
   border: none;
   border-radius: 12px;
-  background: #444;
-  color: white;
+  background: var(--btn-fundo);
+  color: var(--texto);
   cursor: pointer;
-  transition: 0.2s;
+  transition: background 0.2s;
+  box-shadow: inset 0 0 0 1px var(--borda);
 }
 
 button:hover {
-  background: #666;
+  background: var(--btn-hover);
 }
 
 .igual {
   grid-column: span 2;
-  background: #0a84ff;
-  color: #fff;
+  background: var(--btn-azul);
+  color: white;
 }
 
 .igual:hover {
-  background: #0066cc;
+  background: var(--btn-azul-hover);
 }
