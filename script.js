@@ -40,3 +40,16 @@ document.addEventListener("keydown", function(e) {
     limpar();
   }
 });
+
+// Toggle modo claro/escuro
+const btnToggleTema = document.getElementById("btn-toggle-tema");
+
+btnToggleTema.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    btnToggleTema.textContent = "Modo Claro";
+  } else {
+    btnToggleTema.textContent = "Modo Escuro";
+  }
+});
